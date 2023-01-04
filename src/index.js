@@ -13,6 +13,7 @@ import App from "./App";
 import Login from "./pages/Login";
 import ForgotPassword from "./pages/ForgotPassword";
 import SignUp from "./pages/Signup";
+import Home from "./pages/Home";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,6 +24,7 @@ root.render(
                 <Route path="/sign-up" element={<SignUp />} />
                 <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/home" element={<Home />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>
