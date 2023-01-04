@@ -1,10 +1,18 @@
-import React from "react";
+import React, { useState, useEffect, useRef, use } from "react";
 import { FaGooglePlusG, FaTwitter } from "react-icons/fa";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { getDefaultNormalizer } from "@testing-library/react";
 
 function Login() {
+    const navigate = useNavigate();
+
+    const [isLogin, setIsLogin] = useState(false);
+    const [data, setData] = useState([]);
+
+    const API = "https://62a49575259aba8e10eb42f8.mockapi.io/omuji/api";
+
     const formik = useFormik({
         initialValues: {
             email: "",
@@ -15,9 +23,20 @@ function Login() {
             password: yup.string().min(6).required("Password required!"),
         }),
         onSubmit: (values) => {
-            console.log("values", values);
+            const check = data.some(
+                (e) => e.name === values.email && e.password === values.password
+            );
+            if (check) {
+                navigate("/Home");
+            }
         },
     });
+
+    useEffect(() => {
+        fetch(API)
+            .then((res) => res.json())
+            .then((data) => setData(data));
+    }, []);
     return (
         <div className="w-full h-screen flex flex-row relative">
             <p className="absolute top-10 right-10">
@@ -58,7 +77,9 @@ function Login() {
 
                     <form className="" onSubmit={formik.handleSubmit}>
                         <div>
-                            <p className="text-[16px] font-bold">Email Address</p>
+                            <label htmlFor="email" className="text-[16px] font-bold">
+                                Email Address
+                            </label>
                             <input
                                 className="bg-gray-200 px-4 py-2 w-full hover:ring-pink-200 hover:ring-2 rounded-xl mt-2 focus:ring-pink-200 active:ring-pink-200 focus:ring-2 w-full6"
                                 placeholder="Enter Email"
@@ -73,7 +94,9 @@ function Login() {
                         </div>
                         <div className="mt-8">
                             <div className="flex justify-between">
-                                <p className="text-[16px] font-bold">Password</p>
+                                <label htmlFor="password" className="text-[16px] font-bold">
+                                    Password
+                                </label>
                                 <Link to="/forgot-password" className="">
                                     Forgot Password?
                                 </Link>
@@ -90,10 +113,13 @@ function Login() {
                                 <p className="text-red-500 text-sm">{formik.errors.password}</p>
                             )}
                         </div>
+
                         <input
                             type="submit"
                             className="w-[200px] h-[40px] bg-[#ea4c89] text-white text-center rounded-md mt-6 font-bold hover:bg-[#eb73a1]"
                             value="Sign in"
+                            id="sign-in"
+                            name="sign-in"
                         />
                     </form>
                 </div>
