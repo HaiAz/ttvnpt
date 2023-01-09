@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Todo from "../components/Todo/Todo";
 import Sidebar from "../components/Sidebar/Sidebar";
 import { useLocation } from "react-router-dom";
-function Home() {
+function Community() {
     let location = useLocation();
 
     return (
@@ -17,4 +17,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Community;

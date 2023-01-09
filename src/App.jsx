@@ -16,7 +16,12 @@ function App() {
         }, 4000);
     }, []);
 
-    return <div className="App ">{loading ? <Loader /> : <Login />}</div>;
+    return (
+        <div className="App ">
+            {loading ? <Loader /> : <Login />}
+            {/* <Sidebar /> */}
+        </div>
+    );
 }
 
 export default App;
