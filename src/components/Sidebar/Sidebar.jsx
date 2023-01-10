@@ -4,12 +4,14 @@ import logo from "../../Img/Black-Panther-Emblem.png";
 import { FaHome, FaHandsHelping } from "react-icons/fa";
 import { IoIosPeople } from "react-icons/io";
 import { BsFillBarChartFill, BsFillArrowRightCircleFill } from "react-icons/bs";
-import { AiFillSetting, AiOutlineArrowRight } from "react-icons/ai";
+import { AiFillSetting, AiOutlineArrowRight, AiOutlineMore } from "react-icons/ai";
 import { MdFeedback } from "react-icons/md";
 import { useLocation, Link } from "react-router-dom";
 import Todo from "./../Todo/Todo";
 
 function Sidebar() {
+    const [showSidebar, setShowSidebar] = useState(false);
+    const [isMobile, setIsMobile] = useState(false);
     const [open, setOpen] = useState(true);
 
     const openClick = () => {
@@ -17,9 +19,9 @@ function Sidebar() {
     };
     let location = useLocation();
     return (
-        <div className={open ? "sidebar open h-full" : "sidebar h-full"}>
+        <div className={open ? "sidebar open" : "sidebar h-full "}>
             <div className="toggle" onClick={openClick}>
-                <AiOutlineArrowRight className="toggle-icon" />
+                <BsFillArrowRightCircleFill className="toggle-icon" />
             </div>
             <div className="logo">
                 <img src={logo} alt={"logo"} className="logo-img" />

@@ -6,11 +6,11 @@ function Home() {
     let location = useLocation();
 
     return (
-        <div className="w-full h-screen flex ">
-            <div className="w-auto">
+        <div className="w-full min-h-screen h-full flex position: relative">
+            <div className="w-auto position: absolute z-20">
                 <Sidebar className="" />
             </div>
-            <div className="flex items-center flex-grow justify-center bg-slate-400">
+            <div className="w-full flex items-center justify-center z-10">
                 <Todo className="" />
             </div>
         </div>

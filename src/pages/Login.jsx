@@ -108,6 +108,7 @@ function Login() {
                                 onChange={formik.handleChange}
                                 id="password"
                                 name="password"
+                                type="password"
                             />
                             {formik.errors.password && (
                                 <p className="text-red-500 text-sm">{formik.errors.password}</p>
