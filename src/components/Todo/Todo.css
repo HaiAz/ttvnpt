@@ -42,6 +42,9 @@
     padding: 25px 55px 25px 70px;
     font-size: 25px;
     height: 80px;
+    border: 1px solid #c85f6b;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
 }
 
 #header .icon-check {

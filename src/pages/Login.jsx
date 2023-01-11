@@ -12,7 +12,7 @@ function Login() {
     const [data, setData] = useState([]);
 
     const API = "https://62a49575259aba8e10eb42f8.mockapi.io/omuji/api";
-
+    const [isAcc, setIsAcc] = useState(false);
     const formik = useFormik({
         initialValues: {
             email: "",
@@ -28,6 +28,8 @@ function Login() {
             );
             if (check) {
                 navigate("/Home");
+            } else {
+                alert("Usename or password is incorrect!");
             }
         },
     });

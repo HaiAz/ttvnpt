@@ -15,6 +15,10 @@ import ForgotPassword from "./pages/ForgotPassword";
 import SignUp from "./pages/Signup";
 import Home from "./pages/Home";
 import Community from "./pages/Community";
+import GetHelp from "./pages/GetHelp";
+import Analytic from "./pages/Analytics";
+import Setting from "./pages/Setting";
+import Feedback from "./pages/Feedback";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -27,6 +31,10 @@ root.render(
                 <Route path="/login" element={<Login />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/community" element={<Community />} />
+                <Route path="/help" element={<GetHelp />} />
+                <Route path="/feedback" element={<Feedback />} />
+                <Route path="/analytics" element={<Analytic />} />
+                <Route path="/setting" element={<Setting />} />
             </Routes>
         </BrowserRouter>
     </React.StrictMode>

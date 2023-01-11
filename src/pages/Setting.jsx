@@ -1,6 +1,6 @@
 import React from "react";
 import Sidebar from "../components/Sidebar/Sidebar";
-function Community() {
+function Setting() {
     return (
         <div className="w-full min-h-screen h-full flex position: relative">
             <div className="w-auto position: absolute z-20">
@@ -10,4 +10,4 @@ function Community() {
     );
 }
 
-export default Community;
+export default Setting;

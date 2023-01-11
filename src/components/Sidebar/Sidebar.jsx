@@ -46,27 +46,45 @@ function Sidebar() {
                         <IoIosPeople className="nav-icon" />
                         <span>Community</span>
                     </Link>
-                    <div className="nav-item">
+                    <Link
+                        to="/analytics"
+                        className={
+                            location.pathname === "/analytics" ? "nav-item active" : "nav-item"
+                        }
+                    >
                         <BsFillBarChartFill className="nav-icon" />
                         <span>Analytics</span>
-                    </div>
-                    <div className="nav-item">
+                    </Link>
+                    <Link
+                        to="/setting"
+                        className={
+                            location.pathname === "/setting" ? "nav-item active" : "nav-item"
+                        }
+                    >
                         <AiFillSetting className="nav-icon" />
                         <span>Setting</span>
-                    </div>
+                    </Link>
                 </div>
                 <div className="line"></div>
                 <div className="nav-support">Support</div>
 
                 <div className="nav-management">
-                    <div className="nav-item">
+                    <Link
+                        to="/help"
+                        className={location.pathname === "/help" ? "nav-item active" : "nav-item"}
+                    >
                         <FaHandsHelping className="nav-icon" />
                         <span>Get Help</span>
-                    </div>
-                    <div className="nav-item">
+                    </Link>
+                    <Link
+                        to="feedback"
+                        className={
+                            location.pathname === "/feedback" ? "nav-item active" : "nav-item"
+                        }
+                    >
                         <MdFeedback className="nav-icon" />
                         <span>Send Feedback</span>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </div>
