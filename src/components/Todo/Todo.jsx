@@ -14,17 +14,17 @@ function Todo() {
     const [todoList, setTodoList] = useState([
         {
             id: 1,
-            task: "Hôm nay ăn gì?",
+            task: "Bún đậu mắm tôm",
             check: false,
         },
         {
             id: 2,
-            task: "Ăn gì hôm nay?",
+            task: "Cơm tấm sườn bì chả trứng",
             check: true,
         },
         {
             id: 3,
-            task: "I love you 3000!",
+            task: "Phở bò thêm trứng trần",
             check: false,
         },
     ]);
