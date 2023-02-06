@@ -7,7 +7,7 @@ import { BsFillBarChartFill, BsFillArrowRightCircleFill } from "react-icons/bs";
 import { AiFillSetting, AiOutlineArrowRight, AiOutlineMore } from "react-icons/ai";
 import { MdFeedback } from "react-icons/md";
 import { useLocation, Link } from "react-router-dom";
-import Todo from "./../Todo/Todo";
+import Todo from "../Todo/Todo";
 
 function Sidebar() {
     const [showSidebar, setShowSidebar] = useState(false);
@@ -18,6 +18,7 @@ function Sidebar() {
         setOpen(!open);
     };
     let location = useLocation();
+    console.log("re-render");
     return (
         <div className={open ? "sidebar open" : "sidebar h-full "}>
             <div className="toggle" onClick={openClick}>
@@ -25,7 +26,6 @@ function Sidebar() {
             </div>
             <div className="logo">
                 <img src={logo} alt={"logo"} className="logo-img" />
-                <span>Lê Đức Hải</span>
             </div>
             <div className="nav">
                 <div className="nav-title">Management</div>
